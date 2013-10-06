@@ -1,3 +1,3 @@
 {
-    "cmd": ["/Users/dazza/Library/Application Support/Sublime Text 3/Packages/sublime-ruby-terminal/ruby-terminal.sh", "$file"]
+    "cmd": ["~/Library/Application\ Support/Sublime\ Text\ 3/Packages/sublime-ruby-terminal/ruby-terminal.sh", "$file"]
 }

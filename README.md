@@ -10,16 +10,23 @@ Add description here
 
 ### Installation
 
-Copy :
+**Copy :**
+
 ruby-terminal.sublime-build
+
 ruby-terminal.sh
 
-Into :
+**Into :**
+
 /Users/YOUR_USER_NAME/Library/Application Support/Sublime Text 3/Packages/User/
 
-Make ruby-terminal.sh executable
+**Make ruby-terminal.sh executable**
 
 	chmod u+x ruby-terminal.sh
+
+
+
+
 
 
 ---

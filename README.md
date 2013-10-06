@@ -1,9 +1,11 @@
 # Sublime Ruby Terminal
 
-> A build system for Sublime Text 3 which runs your .rb files in the Terminal. OS X only.
+> Two build systems for Sublime Text 3 which runs your .rb files in the Terminal. OS X only.
 
 ### What does it do?
-Opens a terminal window and passes your current .rb file to the default Ruby. This is useful when you have a script which requires user input (such as gets.chomp) something the Sublime console doesn't allow. 
+Opens a terminal window and passes your current .rb file to the default Ruby or RSpec. With Ruby this is useful when you have a script which requires user input (such as gets.chomp) something the Sublime console doesn't allow. 
+
+The RSpec
 
 If Terminal is not open, it will be opened.
 
@@ -29,7 +31,8 @@ Add a link from `/usr/local/bin` to the build script to ensure it runs
 
 Set ruby-terminal to be the default build system in Sublime
 
-`Tools > Build System > ruby-terminal`
+`Tools > Build System > ruby-terminal` for Ruby; or
+`Tools > Build System > ruby-terminal` for RSpec
 
 
 ### Usage

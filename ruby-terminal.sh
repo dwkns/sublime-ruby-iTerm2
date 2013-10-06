@@ -36,6 +36,8 @@ tell application "Terminal"
 activate
 	delay my_delay
 	-- do script "echo hello" in window 1
-	 do script "ruby $1" in window 1
+	set run_which_program to do shell script "echo '$2'"
+	set script_string to (run_which_program as string) & " $1" 
+	do script script_string in window 1
 end tell
 END

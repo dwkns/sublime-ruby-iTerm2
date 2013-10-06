@@ -41,7 +41,8 @@ In sublime create a new ruby file such as `test.rb` :
 
 Hit <kbd>⌘B</kbd> to run the file.
 
-The Terminal will open and test.rb will be run.
+The Terminal will open and `test.rb` will be run.
+
 ---
 
 ### How it works

@@ -11,7 +11,7 @@ Add description here
 ### Installation
 Clone the repo into the right place
 
-    $ cd "~/Library/Application Support/Sublime Text 3/Packages/"
+    $ cd ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/
     $ git clone https://github.com/dwkns/sublime-ruby-terminal.git 
 
 Make **ruby-terminal.sh** executable

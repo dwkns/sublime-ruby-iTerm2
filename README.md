@@ -3,9 +3,9 @@
 > Two build systems for Sublime Text 3 which runs your .rb files in the Terminal. OS X only.
 
 ### What does it do?
-Opens a terminal window and passes your current .rb file to the default Ruby or RSpec. With Ruby this is useful when you have a script which requires user input (such as gets.chomp) something the Sublime console doesn't allow. 
+Opens a terminal window and passes your current .rb file to the default Ruby or RSpec. 
 
-The RSpec
+With Ruby this is useful when you have a script which requires user input (such as gets.chomp) something the Sublime console doesn't allow. The RSpec build system is there for completeness. 
 
 If Terminal is not open, it will be opened.
 

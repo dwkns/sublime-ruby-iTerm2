@@ -9,20 +9,14 @@ Add description here
 ---
 
 ### Installation
+Clone the repo into the right place
 
-**Copy :**
+    $ cd "~/Library/Application Support/Sublime Text 3/Packages/"
+    $ git clone https://github.com/dwkns/sublime-ruby-terminal.git 
 
-ruby-terminal.sublime-build
+Make **ruby-terminal.sh** executable
 
-ruby-terminal.sh
-
-**Into :**
-
-/Users/YOUR_USER_NAME/Library/Application Support/Sublime Text 3/Packages/User/
-
-**Make ruby-terminal.sh executable**
-
-	chmod u+x ruby-terminal.sh
+    $ chmod u+x sublime-ruby-terminal/ruby-terminal.sh
 
 
 

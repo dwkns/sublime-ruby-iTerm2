@@ -7,7 +7,7 @@ Opens a terminal window and passes your current .rb file to the default Ruby or 
 
 With Ruby this is useful when you have a script which requires user input (such as gets.chomp) something the Sublime console doesn't allow. The RSpec build system is there so your tests run in the same enviroment as your scripts. 
 
-The package also includes 4 code snippets describe, context, it and expect which make writing RSpec tests easier.
+The package also includes 4 code snippets: describe, context, it and expect which make writing RSpec tests easier.
 
 
 ---

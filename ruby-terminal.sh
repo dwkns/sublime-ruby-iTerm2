@@ -31,13 +31,23 @@ else
 	end tell
 end if
 
+on replaceText(find, replace, subject)
+	set prevTIDs to text item delimiters of AppleScript
+	set text item delimiters of AppleScript to find
+	set subject to text items of subject
+	
+	set text item delimiters of AppleScript to replace
+	set subject to "" & subject
+	set text item delimiters of AppleScript to prevTIDs
+	
+	return subject
+end replaceText
 
 tell application "Terminal"
 activate
 	delay my_delay
-	-- do script "echo hello" in window 1
 	set run_which_program to do shell script "echo '$2'"
-	set script_string to (run_which_program as string) & " $1" 
+	set script_string to (run_which_program as string) & " " & quoted form of "$1" 
 	do script script_string in window 1
 end tell
 END

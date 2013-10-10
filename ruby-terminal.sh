@@ -31,18 +31,6 @@ else
 	end tell
 end if
 
-on replaceText(find, replace, subject)
-	set prevTIDs to text item delimiters of AppleScript
-	set text item delimiters of AppleScript to find
-	set subject to text items of subject
-	
-	set text item delimiters of AppleScript to replace
-	set subject to "" & subject
-	set text item delimiters of AppleScript to prevTIDs
-	
-	return subject
-end replaceText
-
 tell application "Terminal"
 activate
 	delay my_delay

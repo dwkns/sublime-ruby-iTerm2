@@ -1,10 +1,10 @@
 <snippet>
 	<content><![CDATA[
-expect( $1 ).to 
+initialize "$1" 
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-	<tabTrigger>expect</tabTrigger>
+	<tabTrigger>init</tabTrigger>
 	<!-- Optional: Set a scope to limit where the snippet will trigger -->
 	<scope>source.ruby</scope>
-	<description>do ... end</description>
+	<description>initialize</description>
 </snippet>

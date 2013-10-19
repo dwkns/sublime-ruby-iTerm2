@@ -18,11 +18,10 @@ function rootdir {
 # run the function. $1 is the supplied path/file
 rootdir $1
 
-
 # Test $THIS_PATH to see if it has '.rb' in it. 
-# If it does lib or spec were not found.
-# This is clunky and would fail if in the unlikely 
-# case that the path above the project directory has .rb in it.
+# If it does lib or spec were not found (the path was not stripped).
+# This is a bit clunky and would fail if in the unlikely 
+# case that the path (as apposed to your file) has .rb in it.
 
 echo "$THIS_PATH" | grep -q ".rb"
 if [ $? -eq 0 ];then
@@ -32,10 +31,11 @@ if [ $? -eq 0 ];then
 	#echo "stripped to working dir"
 	CHANGE_DIR="true"
 fi
+
 osascript <<END 
 property my_delay : 0.2
 
---display dialog "$THIS_PATH"
+
 on is_running(appName)
 	tell application "System Events" to (name of processes) contains appName
 end is_running

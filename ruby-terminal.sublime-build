@@ -1,5 +1,5 @@
 {
-    "cmd": ["/usr/local/bin/ruby-terminal.sh", "$file", "ruby"],
+    "cmd": ["/usr/local/bin/ruby-terminal.sh", "$file", "ruby", "$project_path"],
 
     "variants": [
 

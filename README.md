@@ -69,7 +69,7 @@ If Terminal is open and the front window is busy, a new Tab will be used.
 
 ### Version history
 **v0.0.2** - 25th October 2013 - Latest version
-- increased the Applescript delay before commands are run to 0.5s
+- increased the Applescript delay before commands are run.
 Sometimes (depending on system load) the AppleScript would try and run the commands before Terminal was ready. This occasionally led to unpredictable behaviour.
 
 - added an Applescript command to automatically scroll the window to the end. Useful if you've previously scrolled up to review your RSpec output

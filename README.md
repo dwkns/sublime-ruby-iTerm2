@@ -68,7 +68,7 @@ If Terminal is open the front window will be used. If no window is open one will
 If Terminal is open and the front window is busy, a new Tab will be used.
 
 ### Version history
-v0.0.2 - 25th October 2013 - Latest version
+**v0.0.2** - 25th October 2013 - Latest version
 - increased the Applescript delay before commands are run to 0.5s
 Sometimes (depending on system load) the AppleScript would try and run the commands before Terminal was ready. This occasionally led to unpredictable behaviour.
 
@@ -76,4 +76,4 @@ Sometimes (depending on system load) the AppleScript would try and run the comma
 
 - code snippets removed. They should be in thier own package, not bundeled in with a build system. 
 
-v0.0.1 - 5th October 2013 - intial version
+**v0.0.1** - 5th October 2013 - intial version

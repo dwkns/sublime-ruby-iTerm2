@@ -25,15 +25,17 @@ rootdir $1
 
 echo "$THIS_PATH" | grep -q ".rb"
 if [ $? -eq 0 ];then
-  	#echo "found a .rb"
+ 
+  	echo "found a .rb"
   	CHANGE_DIR="false"
   else
-	#echo "stripped to working dir"
+	
+  echo "stripped to working dir"
 	CHANGE_DIR="true"
 fi
 
 osascript <<END 
-property my_delay : 0.5
+property my_delay : 0.2
 
 
 on is_running(appName)
@@ -45,6 +47,7 @@ set isItRunning to is_running("Terminal")
 if isItRunning then
 	tell application "Terminal"
 		activate
+    delay my_delay
 		if (window 1 exists) then	
         --  display dialog "window 1 exists " & the name of the front window
 			-- check to see if its busy
@@ -75,15 +78,15 @@ activate
   -- scroll the terminal window to the bottom.
   -- key code 119 is fn and the right cursor  
   tell application "System Events" to keystroke key code 119 
-  
+
 	delay my_delay
 	set script_string to "$2" & " " & quoted form of "$1" 
 	if "$CHANGE_DIR" = "true" then
-		do  script "cd $THIS_PATH" in front window
+		do script "cd $THIS_PATH" in front window
 		delay my_delay
 	end if
 
 	
-  do  script script_string in window 1 
+  do script script_string in window 1 
 end tell
 END

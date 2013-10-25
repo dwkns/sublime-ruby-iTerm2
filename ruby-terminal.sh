@@ -33,7 +33,7 @@ if [ $? -eq 0 ];then
 fi
 
 osascript <<END 
-property my_delay : 0.2
+property my_delay : 0.5
 
 
 on is_running(appName)
@@ -46,14 +46,22 @@ if isItRunning then
 	tell application "Terminal"
 		activate
 		if (window 1 exists) then	
-			-- check to see if it's busy
+        --  display dialog "window 1 exists " & the name of the front window
+			-- check to see if its busy
 			if (window 1 is busy) then
+        --  display dialog "window 1 is busy doing command t"
 				-- It is busy so open a new tab 
 				tell application "System Events" to keystroke "t" using command down
 			end if	
+
+            -- nead a real test tp see if the window is actually open becasue on rare
+            -- occasions Terminal reports having a window open when it doesn't.
+
 		else
 			-- create it
+         --   display dialog "window 1 doesn't exist - doing command n"
 			tell application "System Events" to keystroke "n" using command down
+            
 		end if
 	end tell
 else
@@ -64,12 +72,18 @@ end if
 
 tell application "Terminal"
 activate
+  -- scroll the terminal window to the bottom.
+  -- key code 119 is fn and the right cursor  
+  tell application "System Events" to keystroke key code 119 
+  
 	delay my_delay
 	set script_string to "$2" & " " & quoted form of "$1" 
 	if "$CHANGE_DIR" = "true" then
 		do  script "cd $THIS_PATH" in front window
 		delay my_delay
 	end if
-	do  script script_string in front window
+
+	
+  do  script script_string in window 1 
 end tell
 END

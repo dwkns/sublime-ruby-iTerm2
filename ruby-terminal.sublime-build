@@ -1,9 +1,9 @@
 {
-    "cmd": ["/usr/local/bin/ruby-terminal.sh", "$file", "ruby", "$project_path"],
+    "cmd": ["/usr/local/bin/ruby-terminal.sh", "$file", "rspec", "$project_path"],
 
     "variants": [
 
-        { "cmd": ["/usr/local/bin/ruby-terminal.sh", "$file", "rspec"],
+        { "cmd":["/usr/local/bin/ruby-terminal.sh", "$file", "ruby", "$project_path"]  ,
           "name": "Run"
         }
     ]

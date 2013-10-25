@@ -74,4 +74,6 @@ Sometimes (depending on system load) the AppleScript would try and run the comma
 
 - added an Applescript command to automatically scroll the window to the end. Useful if you've previously scrolled up to review your RSpec output
 
+- code snippets removed. They should be in thier own package, not bundeled in with a build system. 
+
 v0.0.1 - 5th October 2013 - intial version

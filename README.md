@@ -1,6 +1,6 @@
-# Sublime Ruby Terminal
+# Sublime Ruby iTerm2
 
-> A build system for Sublime Text 3 which runs your .rb files in the Terminal. OS X only.
+> A build system for Sublime Text 3 which runs your .rb files in the iTerm2. OS X only.
 
 ### What does it do?
 Opens a terminal window and passes your current .rb file to the default Ruby or RSpec. 
@@ -25,7 +25,7 @@ Add a link from `/usr/local/bin` to the build script to ensure it runs
 
 Set ruby-terminal to be the default build system in Sublime
 
-`Tools > Build System > ruby-terminal`
+`Tools > Build System > ruby-iTerm2`
 
 
 ### Usage

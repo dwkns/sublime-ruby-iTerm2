@@ -35,47 +35,68 @@ if [ $? -eq 0 ];then
 fi
 
 osascript <<END 
-tell application "iTerm"
+set createTab to false
+set createWindow to false
+
+on is_running(appName)
+  tell application "System Events" to (name of processes) contains appName
+end is_running
+
+set isRunning to is_running("iTerm2")
+
+tell application "iTerm2"
+  activate
   
-  set numberOfWindows to count terminal windows
-  if (count terminal windows) is 0 then
-    -- no window is open. Open one.
-    set createWindow to true
+  -- iTerm wasn't running so delay things to allow it to load.
+  if (isRunning) then
+    -- How many windows are open? 
+    if (count terminal windows) is 0 then
+      -- no window is open. 
+      set createWindow to true
+    else
+      -- there is a window open
+      tell current session of current window
+        
+        -- is the frontmost session busy?
+        if (is processing) or (name is not "bash") then
+          set createTab to true
+        end if
+        
+      end tell
+      
+    end if
+    
+    if (createTab) then
+      tell current window
+        create tab with default profile
+        delay 0.5
+      end tell
+    end if
+    
+    if (createWindow) then
+      create window with default profile
+      delay 0.5
+    end if
     
   else
-    -- there is a window open
-    tell current session of current window
-      if (is processing) or (name is not "bash") then
-        set createTab to true
-      end if
-    end tell
+    delay 1
   end if
   
-  if (createTab) then
-    tell current window
-      create tab with default profile
-    end tell
-  end if
   
-  if (createWindow) then
-    create window with default profile
-  end if
   
   tell current session of current window
     
+    
+    set script_string to "$2" & " " & quoted form of "$1"
+    
+    
+    if "$CHANGE_DIR" = "true" then
+      write text "cd $THIS_PATH"
+      delay my_delay
+    end if
+    
+    write text script_string
   end tell
   
-  -- scroll the terminal window to the bottom.
-  -- key code 119 is fn and the right cursor  
-  tell application "System Events" to keystroke (key code 119)
-  
-  set script_string to "$2" & " " & quoted form of "$1"
-  if "$CHANGE_DIR" = "true" then
-    write "cd $THIS_PATH"
-    delay my_delay
-  end if
-  
-  
 end tell
-
 END

@@ -2,9 +2,10 @@
 
 
 
-> A build system for Sublime Text 3 which runs your .rb files in the iTerm2. OS X only.
+> A build system for Sublime Text 3 which runs your .rb files in iTerm2. OS X only.
 
-### Important. You must use v2.9 or later of iTerm. Currently that means using one of the [nightly builds](http://iterm2.com/downloads/nightly/#/section/home).
+### Important 
+You must use v2.9 or later of iTerm. Currently that means using one of the [nightly builds](http://iterm2.com/downloads/nightly/#/section/home).
 
 ### What does it do?
 Opens a terminal window and passes your current .rb file to the default Ruby or RSpec. 

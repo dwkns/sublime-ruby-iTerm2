@@ -1,38 +1,46 @@
 #!/bin/sh
-# look throught the supplied path/file and see if lib or spec are in in.
-# if they are strip out everything to the directory
-# above lib and spec (the expected working directory)
-# this is where your Ruby and RSpec 'should' run from.
 
-function rootdir {
-  local filename=$1
-  local parent=${filename%%/lib/*}
-  if [[ $filename == $parent ]]; then
-    parent=${filename%%/spec/*}
-  fi
-  echo $parent
 
-  #set a global to hold the result
-  THIS_PATH=$parent
-}
-# run the function. $1 is the supplied path/file
-rootdir $1
+# function rootdir {
+#   local filename=$1
+#   local parent=${filename%%/lib/*}
+#   if [[ $filename == $parent ]]; then
+#     parent=${filename%%/spec/*}
+#   fi
+#   echo $parent
+# echo "that was parent"
+#   #set a global to hold the result
+#   THIS_PATH=$parent
+# }
+# # run the function. $1 is the supplied path/file
+# rootdir $1
 
-# Test $THIS_PATH to see if it has '.rb' in it. 
-# If it does lib or spec were not found (the path was not stripped).
-# This is a bit clunky and would fail if in the unlikely 
-# case that the path (as apposed to your file) has .rb in it.
-
-echo "$THIS_PATH" | grep -q ".rb"
-if [ $? -eq 0 ];then
+# # Test $THIS_PATH to see if it has '.rb' in it. 
+# # If it does lib or spec were not found (the path was not stripped).
+# # This is a bit clunky and would fail if in the unlikely 
+# # case that the path (as apposed to your file) has .rb in it.
+# echo "$THIS_PATH"
+# echo "that was this_path"
+# echo "$THIS_PATH" | grep -q ".rb"
+# if [ $? -eq 0 ];then
  
-    echo "found a .rb"
-    CHANGE_DIR="false"
-  else
+#     echo "found a .rb"
+#     CHANGE_DIR="false"
+#   else
   
-  echo "stripped to working dir"
-  CHANGE_DIR="true"
-fi
+#   echo "stripped to working dir"
+#   CHANGE_DIR="true"
+# fi
+
+PATH_AND_FILE=$1
+
+THE_PATH="${PATH_AND_FILE%/*}"
+FILENAME="${PATH_AND_FILE##*/}"
+
+echo "PATH_AND_FILE=$PATH_AND_FILE"
+echo "THE_PATH=$THE_PATH"
+echo "FILENAME=$FILENAME"
+
 
 osascript <<END 
 set createTab to false
@@ -82,19 +90,10 @@ tell application "iTerm2"
     delay 1
   end if
   
-  
-  
   tell current session of current window
-    
-    
-    set script_string to "$2" & " " & quoted form of "$1"
-    
-    
-    if "$CHANGE_DIR" = "true" then
-      write text "cd $THIS_PATH"
-      delay my_delay
-    end if
-    
+    set script_string to "$2" & " " & quoted form of "$FILENAME"
+    write text "cd '$THE_PATH'"
+    delay 0.5
     write text script_string
   end tell
   

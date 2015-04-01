@@ -1,10 +1,4 @@
 {
     "cmd": ["/usr/local/bin/ruby-iTerm2.sh", "$file", "ruby", "$project_path"],
-
-    "variants": [
-
-        { "cmd":["/usr/local/bin/ruby-iTerm2.sh", "$file", "rspec", "$project_path"]  ,
-          "name": "Run"
-        }
-    ]
+    "selector" : "source.ruby"
 }

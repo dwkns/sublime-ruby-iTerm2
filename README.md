@@ -26,7 +26,7 @@ Make `ruby-iterm2.sh` executable
 
 Add a link from `/usr/local/bin` to the build script to ensure it runs
 	
-	$ ln -s ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/sublime-ruby-iTerm2/ruby-iTerm2.sh /usr/local/bin
+	$ ln -s ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/ruby-iTerm2/ruby-iTerm2.sh /usr/local/bin
 
 Set ruby-terminal to be the default build system in Sublime
 

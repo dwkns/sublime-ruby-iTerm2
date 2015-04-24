@@ -18,11 +18,11 @@ With Ruby this is useful when you have a script which requires user input (such 
 Clone the repo into the right place
 
     $ cd ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/
-    $ git clone https://github.com/dwkns/sublime-ruby-iTerm2.git
+    $ git clone https://github.com/dwkns/ruby-iTerm2.git
 
 Make `ruby-iterm2.sh` executable
 
-    $ chmod u+x sublime-ruby-iTerm2/ruby-iterm2.sh
+    $ chmod u+x ruby-iTerm2/ruby-iterm2.sh
 
 Add a link from `/usr/local/bin` to the build script to ensure it runs
 	
@@ -47,21 +47,6 @@ Hit <kbd>⌘B</kbd> to run the file.
 
 The Terminal will open and `ruby path/to/main.rb` will be run.
 
-**RSpec**
-In sublime create a new RSpec file such as `test.rb` :
-
-
-	describe "main" do 
-		it "should be true if it's true" do
-			expect( true ).to eq true 
-		end
-	end
-
-Hit <kbd>⇧⌘B</kbd> to run the file with RSpec.
-
-The Terminal will open and `rspec path/to/test.rb` will be run.
-
----
 
 ### How it works
 `ruby-iTerm2.sh` uses some Applescript (hence OS X only) to open iTerm2 and pass in your .rb file.

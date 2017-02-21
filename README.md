@@ -8,9 +8,9 @@
 You must use v2.9 or later of iTerm. Currently that means using one of the [nightly builds](http://iterm2.com/downloads/nightly/#/section/home).
 
 ### What does it do?
-Opens a terminal window and passes your current .rb file to the default Ruby or RSpec. 
+Opens a terminal window and passes your current .rb file to the default Ruby. 
 
-With Ruby this is useful when you have a script which requires user input (such as gets.chomp) something the Sublime console doesn't allow. The RSpec build system is included so your tests run in the same enviroment as your scripts. 
+With Ruby this is useful when you have a script which requires user input (such as gets.chomp) something the Sublime console doesn't allow. 
 
 ---
 
@@ -58,7 +58,10 @@ If iTerm2 is open the front window will be used. If no window is open one will b
 If iTerm2 is open and the front window is busy, a new Tab will be created and used.
 
 ### Version history
-**v0.0.3** - 21th March 2015 - Latest version
+**v0.0.4** - 21th Feb 2017 - Latest version
+- Fixed some bugs in the Applescript
+
+**v0.0.3** - 21th March 2015 
 - Updated to use iTerm2 rather than Terminal. This is now possible because of the updated Applescript support in v2.9
 
 **v0.0.2** - 25th October 2013 

@@ -9,9 +9,6 @@ echo "PATH_AND_FILE=$PATH_AND_FILE"
 echo "THE_PATH=$THE_PATH"
 echo "FILENAME=$FILENAME"
 
-echo "something"
-
-
 osascript <<EOF
 
 tell application "iTerm"

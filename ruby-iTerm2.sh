@@ -1,10 +1,9 @@
 #!/bin/sh
-
 PATH_AND_FILE=$1
 
 THE_PATH="${PATH_AND_FILE%/*}"
 FILENAME="${PATH_AND_FILE##*/}"
-
+echo "Script called"
 echo "PATH_AND_FILE=$PATH_AND_FILE"
 echo "THE_PATH=$THE_PATH"
 echo "FILENAME=$FILENAME"
